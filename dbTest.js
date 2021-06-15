@@ -4,7 +4,7 @@ const sequelize = new Sequelize('son', 'admin', 'cometrue', {
     host: 'database-2.cb0teqnptu4h.ap-northeast-2.rds.amazonaws.com'
 });
 
-class TestTable extends Sequelize.Model {}
+class TestTable extends Sequelize.Model { }
 TestTable.init(
     {
         content: {
@@ -19,26 +19,44 @@ TestTable.init(
     }
 );
 
+function connectTest() {
+    console.log('Sequelize connect example3');
+
+    sequelize.authenticate()
+        .then(() => {
+            console.log('Sequelize DB 연결 성공');
+            sequelize.close();
+        })
+        .catch(err => {
+            console.error('Sequelize DB 연결 실패 :', err);
+        });
+}
+
 const prepareModel = async () => {
     try {
-        await TestTable.sync({force:true});
+        await TestTable.sync({ force: true });
         sequelize.close();
     } catch (error) {
         console.log('TestTable.sync Error ', error);
     }
 }
 
-function connectTest() {
-    console.log('Sequelize connect example3');
-
-    sequelize.authenticate()
-    .then(() => {
-        console.log('Sequelize DB 연결 성공');
+async function addNewTest() {
+    try {
+        const ret = await TestTable.create({
+            content: '데스크탑 - 인생'
+        }, { logging: false });
+        const newData = ret.dataValues;
+        console.log(newData);
+        console.log('Create success');
         sequelize.close();
-    })
-    .catch(err => {
-        console.error('Sequelize DB 연결 실패 :', err);
-    });  
+    }
+    catch (error) {
+        console.log('addNewTest() Error - ', error);
+    }
 }
 
-connectTest();
+
+// connectTest();
+// prepareModel();
+addNewTest();
