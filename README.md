@@ -1,8 +1,7 @@
 # 202112707_node_final
  
  table: Countries
- - alpha2Code 
- ex) "KR"
+ - alpha2Code   ex) "KR"
  - alpha3Code  ex) "KOR"
  - numericCode ex) 410
  - nameKR      ex) "대한민국"
