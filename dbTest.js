@@ -44,7 +44,7 @@ const prepareModel = async () => {
 async function addNewTest() {
     try {
         const ret = await TestTable.create({
-            content: '데스크탑 - 인생'
+            content: 'EC2 - 인생'
         }, { logging: false });
         const newData = ret.dataValues;
         console.log(newData);
