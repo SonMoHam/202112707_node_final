@@ -38,3 +38,5 @@ const prepareModel = async () => {
         console.log('MyModel - prepareModel() Error / ', error);
     }
 }
+
+prepareModel();
