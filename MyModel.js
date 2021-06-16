@@ -39,4 +39,24 @@ const prepareModel = async () => {
     }
 }
 
-prepareModel();
+async function createCountry(input) {
+    try {
+        const ret = await Country.create({
+            alpha2Code: input.alpha2Code,
+            alpha3Code: input.alpha3Code,
+            numericCode: input.numericCode,
+            nameKR: input.nameKR,
+            nameEN: input.nameEN
+        });
+        const newData = ret.dataValues;
+        console.log(newData);
+        console.log('MyModel - createCountry() create success');
+    } catch (error) {
+        console.log('MyModel - createCountry() Error / ', error);
+    }
+}
+
+exports.myModel = {
+    createCountry,
+}
+// prepareModel();
