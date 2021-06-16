@@ -21,8 +21,15 @@ function getCountries(req, res){
 
 async function postCountry(req, res) {
     try{
-        console.log('body');
-        console.log(req.body);
+        const inputObject = {
+            alpha2Code: req.body.alpha2_Code,
+            alpha3Code: req.body.alpha3_Code,
+            numericCode: req.body.numeric_Code,
+            nameKR: req.body.name_KR,
+            nameEN: req.body.name_EN
+        }
+        await myModel.createCountry(inputObject);
+        console.log('inputObject',inputObject);
         res.send({msg: 'tdController - postGroup() success'});
     }
     catch (error) {
