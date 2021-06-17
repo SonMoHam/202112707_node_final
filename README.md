@@ -9,11 +9,11 @@
    
    
 메소드
-Get countries 
+Get country
 - 국가목록 요청
 
-Get countries/:country_code
+Get country/:country_code
 - country_code 해당 국가 상세 요청
 
-Post countries
+Post country
 - 국가 등록
