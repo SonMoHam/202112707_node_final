@@ -23,7 +23,7 @@ async function getCountries(req, res){
 async function postCountry(req, res) {
     try{
         const inputObject = {
-            alpha2Code: req.body.alpha2_Codwwwwwe,
+            alpha2Code: req.body.alpha2_Code,
             alpha3Code: req.body.alpha3_Code,
             numericCode: req.body.numeric_Code,
             nameKR: req.body.name_KR,
