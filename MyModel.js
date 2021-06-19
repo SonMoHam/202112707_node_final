@@ -71,7 +71,7 @@ async function readCountryList() {
 
 async function readCountry(countryCode) {
     try {
-        let ret = await Country.findOne({where: {year: {[Op.eq]: countryCode}}});
+        let ret = await Country.findOne({where: {alpha3Code: {[Op.eq]: countryCode}}});
         console.log('MyModel - readCountry() success / ', ret);
         return ret;
     } catch (error) {
@@ -84,4 +84,4 @@ exports.myModel = {
     readCountry
 }
 // prepareModel();
-// readCountry('kr');
+// readCountry('kor');
