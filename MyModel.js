@@ -50,13 +50,26 @@ async function createCountry(input) {
         });
         const newData = ret.dataValues;
         console.log(newData);
-        console.log('MyModel - createCountry() create success');
+        console.log('MyModel - createCountry() success');
     } catch (error) {
         console.log('MyModel - createCountry() Error / ', error);
     }
 }
 
+async function readCountryList() {
+    const ret = Country.findAll({})
+        .then(results => {
+            console.log('MyModel - readCountryList() success');
+            return results;
+        })
+        
+        .catch(error => {
+            console.error('MyModel - createCountry() Error / ',error);
+        });
+    return ret;
+}
 exports.myModel = {
     createCountry,
+    readCountryList,
 }
 // prepareModel();
