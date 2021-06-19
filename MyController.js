@@ -13,7 +13,8 @@ app.post('/country', postCountry);
 
 function getCountries(req, res){
     try {
-        res.send({msg: 'MyController - getCountries() success', data: 0});
+        const ret = await myModel.readCountryList();
+        res.send({msg: 'MyController - getCountries() success', data: ret});
     } catch (error) {
         console.log('MyController - getCountries() error / ',error);
     }
@@ -22,7 +23,7 @@ function getCountries(req, res){
 async function postCountry(req, res) {
     try{
         const inputObject = {
-            alpha2Code: req.body.alpha2_Code,
+            alpha2Code: req.body.alpha2_Codwwwwwe,
             alpha3Code: req.body.alpha3_Code,
             numericCode: req.body.numeric_Code,
             nameKR: req.body.name_KR,
