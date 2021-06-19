@@ -64,12 +64,24 @@ async function readCountryList() {
         })
         
         .catch(error => {
-            console.error('MyModel - createCountry() Error / ',error);
+            console.error('MyModel - readCountryList() Error / ',error);
         });
     return ret;
+}
+
+async function readCountry(countryCode) {
+    try {
+        let ret = await Country.findOne({where: {year: {[Op.eq]: countryCode}}});
+        console.log('MyModel - readCountry() success / ', ret);
+        return ret;
+    } catch (error) {
+        console.error('MyModel - readCountry() Error / ',error);
+    }
 }
 exports.myModel = {
     createCountry,
     readCountryList,
+    readCountry
 }
 // prepareModel();
+// readCountry('kr');
