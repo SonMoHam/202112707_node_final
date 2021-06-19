@@ -11,7 +11,7 @@ app.listen(3000);
 app.get('/country', getCountries);
 app.post('/country', postCountry);
 
-function getCountries(req, res){
+async function getCountries(req, res){
     try {
         const ret = await myModel.readCountryList();
         res.send({msg: 'MyController - getCountries() success', data: ret});
