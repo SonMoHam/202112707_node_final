@@ -38,6 +38,7 @@
 - Post /subdivision
 - Put /subdivision
 - Delete /subdivision
+#
 ### Get /country 
 #### 업무 - 국가 목록 보기
 #### 응답 - JSON
@@ -82,7 +83,7 @@
 ### Delete /country
 #### 업무 - 전달 받은 id에 해당하는 국가 정보 삭제
 #### 요청 바디
-- id - Country 레코드 id
+- id - 삭제할 Country 레코드 id
 #### 응답 - JSON
 - msg - 성공/실패 메시지
 #
@@ -102,5 +103,13 @@
 #### 요청 바디
 
 ![image](https://user-images.githubusercontent.com/73145656/122723014-67591a80-d2ad-11eb-88c7-05bc13956c37.png)
+#### 응답 - JSON
+- msg - 성공/실패 메시지
+
+### Put /subdivision
+#### 업무 - 행정구역 정보 수정
+#### 요청 바디
+
+
 #### 응답 - JSON
 - msg - 성공/실패 메시지
