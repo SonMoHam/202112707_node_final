@@ -107,7 +107,7 @@ async function postSubdivision(req, res) {
             nameKR: req.body.name_KR,
             nameEN: req.body.name_EN
         }
-        await myModel.createCountry(inputObject);
+        await myModel.createSubdivision(inputObject);
         console.log('inputObject',inputObject);
         res.send({msg: 'tdController - postSubdivision() success'});
     } catch (error) {
