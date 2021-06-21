@@ -19,7 +19,7 @@ app.post('/subdivision', postSubdivision);
 app.put('/subdivision', putSubdivision);
 app.delete('/subdivision', deleteSubdivision);
 
-
+// country methods -------------------------------------------------
 async function getCountries(req, res){
     try {
         const ret = await myModel.readCountryList();
@@ -85,6 +85,8 @@ async function deleteCountry(req, res) {
         console.error('tdController - deleteCountry() error / ',error);
     }
 }
+
+// division methods -------------------------------------------------
 
 async function getSubdivisions(req, res) {
     try {
