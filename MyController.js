@@ -73,8 +73,7 @@ async function putCountry(req, res) {
 async function deleteCountry(req, res) {
     try {
         let targetId = req.body.id;
-
-
+        await myModel.deleteCountry(targetId);
         res.send({msg: 'tdController - deleteCountry() success'});
     } catch (error) {
         console.error('tdController - deleteCountry() error / ',error);
