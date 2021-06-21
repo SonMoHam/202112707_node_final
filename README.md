@@ -26,7 +26,7 @@
 
 ![subdivisiondata](https://user-images.githubusercontent.com/73145656/122716683-881d7200-d2a5-11eb-8356-30c742912f29.PNG)
 
-   
+---
 ## 메소드
 ### Get /country 
 - 국가 목록 보기
