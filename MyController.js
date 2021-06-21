@@ -12,6 +12,7 @@ app.get('/country', getCountries);
 app.get('/country/:country_code', getCountry);
 app.post('/country', postCountry);
 app.put('/country', putCountry);
+app.delete('/country', deleteCountry);
 
 async function getCountries(req, res){
     try {
@@ -47,7 +48,7 @@ async function postCountry(req, res) {
         res.send({msg: 'tdController - postGroup() success'});
     }
     catch (error) {
-        console.log('tdController - postGroup() - error / ',error);
+        console.log('tdController - postGroup() error / ',error);
     }
 }
 
@@ -65,6 +66,16 @@ async function putCountry(req, res) {
         res.send({msg: 'tdController - putCountry() success'});
     }
     catch (error) {
-        console.log('tdController - putCountry() - error / ',error);
+        console.log('tdController - putCountry() error / ',error);
+    }
+}
+
+async function deleteCountry(req, res) {
+    try {
+        let targetId = req.body.id;
+        
+        res.send({msg: 'tdController - deleteCountry() success'});
+    } catch (error) {
+        console.log('tdController - deleteCountry() error / ',error);
     }
 }
