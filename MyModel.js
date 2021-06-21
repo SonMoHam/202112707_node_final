@@ -62,26 +62,47 @@ async function readCountryList() {
             console.log('MyModel - readCountryList() success');
             return results;
         })
-        
+
         .catch(error => {
-            console.error('MyModel - readCountryList() Error / ',error);
+            console.error('MyModel - readCountryList() Error / ', error);
         });
     return ret;
 }
 
 async function readCountry(countryCode) {
     try {
-        let ret = await Country.findOne({where: {alpha3Code: {[Op.eq]: countryCode}}});
+        let ret = await Country.findOne({ where: { alpha3Code: { [Op.eq]: countryCode } } });
         console.log('MyModel - readCountry() success / ', ret);
         return ret;
     } catch (error) {
-        console.error('MyModel - readCountry() Error / ',error);
+        console.error('MyModel - readCountry() Error / ', error);
     }
 }
+
+async function updateCountry(input) {
+    try {
+        let ret = await Country.update({
+            alpha2Code: input.alpha2Code,
+            alpha3Code: input.alpha3Code,
+            numericCode: input.numericCode,
+            nameKR: input.nameKR,
+            nameEN: input.nameEN},
+            { where: { id: input.id}}
+        );
+        const newData = ret.dataValues;
+        console.log(newData);
+        console.log('MyModel - createCountry() success');
+    } catch (error) {
+        console.log('MyModel - createCountry() Error / ', error);
+    }
+}
+
+
 exports.myModel = {
     createCountry,
     readCountryList,
-    readCountry
+    readCountry,
+    updateCountry,
 }
 // prepareModel();
 // readCountry('kor');
