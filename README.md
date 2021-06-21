@@ -82,3 +82,22 @@
 - id - Country 레코드 id
 #### 응답 - JSON
 - msg - 성공/실패 메시지
+#
+
+### Get /subdivision
+#### 업무 - 등록된 행정구역 보기
+#### 응답 - JSON
+- msg - 성공/실패 메시지
+- data
+- 데이터 예시
+
+![image](https://user-images.githubusercontent.com/73145656/122722658-f0238680-d2ac-11eb-8bc9-e21b7e685ce9.png)
+#
+
+### Post /subdivision
+#### 업무 - 행정구역 등록
+#### 요청 바디
+
+![image](https://user-images.githubusercontent.com/73145656/122723014-67591a80-d2ad-11eb-88c7-05bc13956c37.png)
+#### 응답 - JSON
+- msg - 성공/실패 메시지
