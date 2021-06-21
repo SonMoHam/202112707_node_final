@@ -105,11 +105,20 @@
 ![image](https://user-images.githubusercontent.com/73145656/122723014-67591a80-d2ad-11eb-88c7-05bc13956c37.png)
 #### 응답 - JSON
 - msg - 성공/실패 메시지
-
+#
 ### Put /subdivision
 #### 업무 - 행정구역 정보 수정
 #### 요청 바디
 
-
+![image](https://user-images.githubusercontent.com/73145656/122723894-68d71280-d2ae-11eb-9558-78a5ec42ce07.png)
 #### 응답 - JSON
 - msg - 성공/실패 메시지
+#
+
+### Delete /subdivision
+#### 업무 - 전달 받은 id에 해당하는 행정구역 정보 삭제
+#### 요청 바디
+- id - 삭제할 subdivision 레코드 id
+#### 응답 - JSON
+- msg - 성공/실패 메시지
+#
