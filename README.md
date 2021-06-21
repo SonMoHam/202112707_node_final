@@ -1,6 +1,7 @@
 # 202112707_node_final
- 
-## table: Countries
+
+## Table
+### Countries
  - id
  - alpha2Code   
  - alpha3Code
@@ -14,7 +15,7 @@
 ![country data](https://user-images.githubusercontent.com/73145656/122716676-85bb1800-d2a5-11eb-8cba-633afaea38aa.PNG)
 
 
-## table: Subdivisions 
+### Subdivisions 
  - id
  - code
  - nameKR
@@ -32,7 +33,7 @@
 #### 응답 - JSON
 - msg
 - data
-
+---
 ### Get country/:country_code
 - country_code 해당 국가 상세 요청
 
