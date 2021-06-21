@@ -39,14 +39,14 @@ const prepareModel = async () => {
     }
 }
 
-async function createCountry(input) {
+async function createCountry(inputObject) {
     try {
         const ret = await Country.create({
-            alpha2Code: input.alpha2Code,
-            alpha3Code: input.alpha3Code,
-            numericCode: input.numericCode,
-            nameKR: input.nameKR,
-            nameEN: input.nameEN
+            alpha2Code: inputObject.alpha2Code,
+            alpha3Code: inputObject.alpha3Code,
+            numericCode: inputObject.numericCode,
+            nameKR: inputObject.nameKR,
+            nameEN: inputObject.nameEN
         });
         const newData = ret.dataValues;
         console.log(newData);
@@ -79,15 +79,15 @@ async function readCountry(countryCode) {
     }
 }
 
-async function updateCountry(input) {
+async function updateCountry(targetId, inputObject) {
     try {
         let ret = await Country.update({
-            alpha2Code: input.alpha2Code,
-            alpha3Code: input.alpha3Code,
-            numericCode: input.numericCode,
-            nameKR: input.nameKR,
-            nameEN: input.nameEN},
-            { where: { id: input.id}}
+            alpha2Code: inputObject.alpha2Code,
+            alpha3Code: inputObject.alpha3Code,
+            numericCode: inputObject.numericCode,
+            nameKR: inputObject.nameKR,
+            nameEN: inputObject.nameEN},
+            { where: { id: targetId}}
         );
         const newData = ret.dataValues;
         console.log(newData);
