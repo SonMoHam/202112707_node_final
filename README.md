@@ -27,11 +27,11 @@
 
    
 ## 메소드
-Get country
-- 국가목록 요청
+### Get country 
+1 국가목록 요청
 
-Get country/:country_code
+### Get country/:country_code
 - country_code 해당 국가 상세 요청
 
-Post country
+### Post country
 - 국가 등록
