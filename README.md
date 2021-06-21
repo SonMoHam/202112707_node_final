@@ -28,6 +28,16 @@
 
 ---
 ## 메소드
+- Method URL
+- Get /country
+- Get /country/:alpha2_code
+- Post /country
+- Put /country
+- Delete /country
+- Get /subdivision
+- Post /subdivision
+- Put /subdivision
+- Delete /subdivision
 ### Get /country 
 #### 업무 - 국가 목록 보기
 #### 응답 - JSON
