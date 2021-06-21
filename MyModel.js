@@ -30,9 +30,31 @@ Country.init(
     }
 );
 
+class SubDivision extends Sequelize.Model { }
+SubDivision.init(
+    {
+        code: {
+            type: Sequelize.STRING,
+        },
+        nameKR: {
+            type: Sequelize.STRING,
+        },
+        nameEN: {
+            type: Sequelize.STRING,
+        },
+    },
+    {
+        sequelize,
+        charset: 'utf8',
+        collate: 'utf8_general_ci'
+    }
+);
+
 const prepareModel = async () => {
+    Country.hasMany(SubDivision, { foreignKey: 'countryId' });
     try {
-        await Country.sync({ force: true });
+        await Country.sync();
+        await SubDivision.sync();
     }
     catch (error) {
         console.error('MyModel - prepareModel() Error / ', error);
