@@ -27,9 +27,11 @@
 
    
 ## 메소드
-### Get country 
-#### - 요청
+### Get /country 
 - 국가 목록 보기
+#### 응답 - JSON
+- msg
+- data
 
 ### Get country/:country_code
 - country_code 해당 국가 상세 요청
