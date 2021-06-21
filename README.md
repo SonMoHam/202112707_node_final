@@ -29,16 +29,16 @@
 ---
 ## 메소드
 ### Get /country 
-- 국가 목록 보기
+#### 요청 - 국가 목록 보기
 #### 응답 - JSON
-- msg - 성공/실패 여부
+- msg - 성공/실패 메시지
 - data
 - 예시
 
 ![image](https://user-images.githubusercontent.com/73145656/122719576-53131e80-d2a9-11eb-8053-4b5a527db03e.png)
 #
-### Get country/:country_code
-- country_code 해당 국가 상세 요청
-
-### Post country
-- 국가 등록
+### Get /country/:alpha2_code
+#### 요청 - 코드에 해당하는 국가의 정보와 행정구역 보기
+#### 응답 - JSON
+- msg - 성공/실패 메시지
+- data
