@@ -60,6 +60,7 @@ const prepareModel = async () => {
     }
 }
 
+// country CRUD methods -------------------------------------------------
 async function createCountry(inputObject) {
     try {
         const ret = await Country.create({
@@ -127,9 +128,10 @@ async function deleteCountry(targetId) {
     }
 }
 
+// subdivision CRUD methods -------------------------------------------------
 async function createSubdivision(inputObject) {
     try {
-        const ret = await SubDivision.create({
+        const ret = await Subdivision.create({
             code: inputObject.code,
             nameKR: inputObject.nameKR,
             nameEN: inputObject.nameEN
