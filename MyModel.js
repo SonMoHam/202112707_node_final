@@ -99,7 +99,7 @@ async function updateCountry(targetId, inputObject) {
 
 async function deleteCountry(targetId) {
     try {
-        let result = await Country.destroy({ where: { year: { [Op.eq]: targetId }}});
+        let result = await Country.destroy({ where: { id: { [Op.eq]: targetId }}});
         console.log('MyModel - deleteCountry() success / ', result);
     } catch (error) {
         console.error('MyModel - deleteCountry() Error / ', error);
