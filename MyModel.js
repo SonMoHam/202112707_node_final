@@ -35,7 +35,7 @@ const prepareModel = async () => {
         await Country.sync({ force: true });
     }
     catch (error) {
-        console.log('MyModel - prepareModel() Error / ', error);
+        console.error('MyModel - prepareModel() Error / ', error);
     }
 }
 
@@ -52,7 +52,7 @@ async function createCountry(inputObject) {
         console.log(newData);
         console.log('MyModel - createCountry() success');
     } catch (error) {
-        console.log('MyModel - createCountry() Error / ', error);
+        console.error('MyModel - createCountry() Error / ', error);
     }
 }
 
@@ -93,7 +93,16 @@ async function updateCountry(targetId, inputObject) {
         console.log(newData);
         console.log('MyModel - createCountry() success');
     } catch (error) {
-        console.log('MyModel - createCountry() Error / ', error);
+        console.error('MyModel - createCountry() Error / ', error);
+    }
+}
+
+async function deleteCountry(targetId) {
+    try {
+
+        console.log('MyModel - deleteCountry() success');
+    } catch (error) {
+        console.error('MyModel - deleteCountry() Error / ', error);
     }
 }
 
@@ -103,6 +112,7 @@ exports.myModel = {
     readCountryList,
     readCountry,
     updateCountry,
+    deleteCountry
 }
 // prepareModel();
 // readCountry('kor');
