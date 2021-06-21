@@ -28,7 +28,7 @@
    
 ## 메소드
 ### Get country 
-1 국가목록 요청
+#### 요청
 
 ### Get country/:country_code
 - country_code 해당 국가 상세 요청
