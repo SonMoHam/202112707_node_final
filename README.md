@@ -21,7 +21,7 @@
  - nameKR     - 한글 행정구역명
  - nameEN     - 영문 행정구역명
  - createdAt  - 작성일시
- - updatedAt  - 
+ - updatedAt  - 수정일시
  - 데이터 예시
 
 ![subdivisiondata](https://user-images.githubusercontent.com/73145656/122716683-881d7200-d2a5-11eb-8356-30c742912f29.PNG)
