@@ -33,7 +33,10 @@ async function getCountry(req, res) {
     try {
         console.log('alpha2_code: ', req.params.alpha2_code);
         let alpha2Code = req.params.alpha2_code;
-        const ret = await myModel.readCountry(alpha2Code);
+        const ret = {
+            country: await myModel.readCountry(alpha2Code),
+            subdivisions: await myModel.readSubdivisionByCountryCode(alpha2Code)
+        }
         res.send({msg: 'MyController - getCountry() success', data: ret});
     } catch (error) {
         console.error('MyController - getCountry() error / ',error);
@@ -90,8 +93,8 @@ async function deleteCountry(req, res) {
 
 async function getSubdivisions(req, res) {
     try {
-
-        res.send({msg: 'tdController - getSubdivisions() success'});
+        const ret = await myModel.readSubdivisionList();
+        res.send({msg: 'MyController - getSubdivisions() success', data: ret});
     } catch (error) {
         console.error('tdController - getSubdivisions() error / ',error);
     }
@@ -99,7 +102,13 @@ async function getSubdivisions(req, res) {
 
 async function postSubdivision(req, res) {
     try {
-
+        const inputObject = {
+            code: req.body.code,
+            nameKR: req.body.name_KR,
+            nameEN: req.body.name_EN
+        }
+        await myModel.createCountry(inputObject);
+        console.log('inputObject',inputObject);
         res.send({msg: 'tdController - postSubdivision() success'});
     } catch (error) {
         console.error('tdController - postSubdivision() error / ',error);
@@ -108,7 +117,13 @@ async function postSubdivision(req, res) {
 
 async function putSubdivision(req, res) {
     try {
-
+        let targetId = req.body.id;
+        const inputObject = {
+            code: req.body.code,
+            nameKR: req.body.name_KR,
+            nameEN: req.body.name_EN
+        }
+        await myModel.updateSubdivision(targetId, inputObject);
         res.send({msg: 'tdController - putSubdivision() success'});
     } catch (error) {
         console.error('tdController - putSubdivision() error / ',error);
@@ -117,7 +132,8 @@ async function putSubdivision(req, res) {
 
 async function deleteSubdivision(req, res) {
     try {
-
+        let targetId = req.body.id;
+        await myModel.deleteSubdivision(targetId);
         res.send({msg: 'tdController - deleteSubdivision() success'});
     } catch (error) {
         console.error('tdController - deleteSubdivision() error / ',error);
