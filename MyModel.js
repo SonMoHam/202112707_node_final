@@ -83,7 +83,6 @@ async function readCountryList() {
             console.log('MyModel - readCountryList() success');
             return results;
         })
-
         .catch(error => {
             console.error('MyModel - readCountryList() Error / ', error);
         });
