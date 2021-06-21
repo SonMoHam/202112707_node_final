@@ -144,8 +144,9 @@ async function createSubdivision(inputObject) {
 
 async function readSubdivisionList() {
     try {
-
+        let results = await Subdivision.findAll({});
         console.log('MyModel - readSubdivisionList() success');
+        return results;
     } catch (error) {
         console.error('MyModel - readSubdivisionList() Error / ', error);
     }
@@ -153,8 +154,11 @@ async function readSubdivisionList() {
 
 async function readSubdivisionByCountryCode(alpha2Code) {
     try {
-
+        let results = await Subdivision.findAll({
+            where: { code: { [Op.startsWith]: alpha2Code } }
+        });
         console.log('MyModel - readSubdivisionByCountryCode() success');
+        return results;
     } catch (error) {
         console.error('MyModel - readSubdivisionByCountryCode() Error / ', error);
     }
@@ -162,7 +166,15 @@ async function readSubdivisionByCountryCode(alpha2Code) {
 
 async function updateSubdivision(targetId, inputObject) {
     try {
-
+        let ret = await Subdivision.update({
+            code: inputObject.code,
+            nameKR: inputObject.nameKR,
+            nameEN: inputObject.nameEN
+        },
+            { where: { id: targetId } }
+        );
+        const newData = ret.dataValues;
+        console.log(newData);
         console.log('MyModel - updateSubdivision() success');
     } catch (error) {
         console.error('MyModel - updateSubdivision() Error / ', error);
@@ -171,8 +183,8 @@ async function updateSubdivision(targetId, inputObject) {
 
 async function deleteSubdivision(targetId) {
     try {
-
-        console.log('MyModel - deleteSubdivision() success');
+        let result = await Subdivision.destroy({ where: { id: { [Op.eq]: targetId } } });
+        console.log('MyModel - deleteSubdivision() success / ', result);
     } catch (error) {
         console.error('MyModel - deleteSubdivision() Error / ', error);
     }
@@ -191,5 +203,5 @@ exports.myModel = {
     updateSubdivision,
     deleteSubdivision
 }
-prepareModel();
+// prepareModel();
 // readCountry('kor');
