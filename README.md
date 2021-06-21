@@ -29,7 +29,7 @@
 ---
 ## 메소드
 ### Get /country 
-#### 요청 - 국가 목록 보기
+#### 국가 목록 보기
 #### 응답 - JSON
 - msg - 성공/실패 메시지
 - data
@@ -38,7 +38,7 @@
 ![image](https://user-images.githubusercontent.com/73145656/122719576-53131e80-d2a9-11eb-8053-4b5a527db03e.png)
 #
 ### Get /country/:alpha2_code
-#### 요청 - alpha2_code 에 해당하는 국가의 정보와 행정구역 보기
+#### alpha2_code 에 해당하는 국가의 정보와 행정구역 보기
 #### 응답 - JSON
 - msg - 성공/실패 메시지
 - data
@@ -47,4 +47,12 @@
 ![image](https://user-images.githubusercontent.com/73145656/122720452-738fa880-d2aa-11eb-8f23-7adce3fc93d2.png)
 #
 
-### post /country
+### Post /country
+#### 국가 정보 등록
+#### 요청 바디
+
+![image](https://user-images.githubusercontent.com/73145656/122721191-56a7a500-d2ab-11eb-8604-927db5674e19.png)
+
+#### 응답 - JSON
+- msg - 성공/실패 메시지
+#
