@@ -34,10 +34,8 @@
 - msg - 성공/실패 여부
 - data
 - 예시
-- 
+
 ![image](https://user-images.githubusercontent.com/73145656/122719576-53131e80-d2a9-11eb-8053-4b5a527db03e.png)
-
-
 #
 ### Get country/:country_code
 - country_code 해당 국가 상세 요청
