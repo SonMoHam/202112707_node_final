@@ -41,7 +41,7 @@ SubDivision.init(
         },
         nameEN: {
             type: Sequelize.STRING,
-        },
+        }
     },
     {
         sequelize,
@@ -51,7 +51,6 @@ SubDivision.init(
 );
 
 const prepareModel = async () => {
-    Country.hasMany(SubDivision, { foreignKey: 'countryId' });
     try {
         await Country.sync();
         await SubDivision.sync();
@@ -108,8 +107,9 @@ async function updateCountry(targetId, inputObject) {
             alpha3Code: inputObject.alpha3Code,
             numericCode: inputObject.numericCode,
             nameKR: inputObject.nameKR,
-            nameEN: inputObject.nameEN},
-            { where: { id: targetId}}
+            nameEN: inputObject.nameEN
+        },
+            { where: { id: targetId } }
         );
         const newData = ret.dataValues;
         console.log(newData);
@@ -121,20 +121,76 @@ async function updateCountry(targetId, inputObject) {
 
 async function deleteCountry(targetId) {
     try {
-        let result = await Country.destroy({ where: { id: { [Op.eq]: targetId }}});
+        let result = await Country.destroy({ where: { id: { [Op.eq]: targetId } } });
         console.log('MyModel - deleteCountry() success / ', result);
     } catch (error) {
         console.error('MyModel - deleteCountry() Error / ', error);
     }
 }
 
+async function createSubDivision(inputObject) {
+    try {
+        const ret = await SubDivision.create({
+            code: inputObject.code,
+            nameKR: inputObject.nameKR,
+            nameEN: inputObject.nameEN
+        });
+        const newData = ret.dataValues;
+        console.log(newData);
+        console.log('MyModel - createSubDivision() success');
+    } catch (error) {
+        console.error('MyModel - createSubDivision() Error / ', error);
+    }
+}
+
+async function readSubDivisionList() {
+    try {
+
+        console.log('MyModel - readSubDivisionList() success');
+    } catch (error) {
+        console.error('MyModel - readSubDivisionList() Error / ', error);
+    }
+}
+
+async function readSubDivisionByCountryCode(alpha2Code) {
+    try {
+
+        console.log('MyModel - readSubDivisionByCountryCode() success');
+    } catch (error) {
+        console.error('MyModel - readSubDivisionByCountryCode() Error / ', error);
+    }
+}
+
+async function updateSubDivision(targetId, inputObject) {
+    try {
+
+        console.log('MyModel - updateSubDivision() success');
+    } catch (error) {
+        console.error('MyModel - updateSubDivision() Error / ', error);
+    }
+}
+
+async function deleteSubDivision(targetId) {
+    try {
+
+        console.log('MyModel - deleteSubDivision() success');
+    } catch (error) {
+        console.error('MyModel - deleteSubDivision() Error / ', error);
+    }
+}
 
 exports.myModel = {
     createCountry,
     readCountryList,
     readCountry,
     updateCountry,
-    deleteCountry
+    deleteCountry,
+
+    createSubDivision,
+    readSubDivisionList,
+    readSubDivisionByCountryCode,
+    updateSubDivision,
+    deleteSubDivision
 }
 // prepareModel();
 // readCountry('kor');
