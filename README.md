@@ -1,12 +1,28 @@
 # 202112707_node_final
  
- table: Countries
- - alpha2Code   ex) "KR"
- - alpha3Code  ex) "KOR"
- - numericCode ex) 410
- - nameKR      ex) "대한민국"
- - nameEN      ex) "KOREA
-   
+table: Countries
+ - id
+ - alpha2Code   
+ - alpha3Code
+ - numericCode 
+ - nameKR      
+ - nameEN     
+ - createdAt
+ - updatedAt
+데이터 예시
+![country data](https://user-images.githubusercontent.com/73145656/122716676-85bb1800-d2a5-11eb-8cba-633afaea38aa.PNG)
+
+
+table: Subdivisions 
+ - id
+ - code
+ - nameKR
+ - nameEN
+ - createdAt
+ - updatedAt
+데이터 예시
+![subdivisiondata](https://user-images.githubusercontent.com/73145656/122716683-881d7200-d2a5-11eb-8356-30c742912f29.PNG)
+
    
 메소드
 Get country
