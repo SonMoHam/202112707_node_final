@@ -58,5 +58,12 @@
 #
 
 ### Put /country
-#### 업무 - 국가 정보 수정
+#### 업무 - 전달 받은 id에 해당하는 국가 정보 수정
 #### 요청 바디
+
+![image](https://user-images.githubusercontent.com/73145656/122721773-02e98b80-d2ac-11eb-83fb-def96aac8442.png)
+#### 응답 - JSON
+- msg - 성공/실패 메시지
+#
+
+### Delete /country
