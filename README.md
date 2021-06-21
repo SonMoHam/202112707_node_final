@@ -43,6 +43,7 @@
 - msg - 성공/실패 메시지
 - data
 - 예시
+
 ![image](https://user-images.githubusercontent.com/73145656/122720452-738fa880-d2aa-11eb-8f23-7adce3fc93d2.png)
 #
 
