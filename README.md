@@ -1,6 +1,6 @@
 # 202112707_node_final
  
-table: Countries
+## table: Countries
  - id
  - alpha2Code   
  - alpha3Code
@@ -14,7 +14,7 @@ table: Countries
 ![country data](https://user-images.githubusercontent.com/73145656/122716676-85bb1800-d2a5-11eb-8cba-633afaea38aa.PNG)
 
 
-table: Subdivisions 
+## table: Subdivisions 
  - id
  - code
  - nameKR
@@ -26,7 +26,7 @@ table: Subdivisions
 ![subdivisiondata](https://user-images.githubusercontent.com/73145656/122716683-881d7200-d2a5-11eb-8356-30c742912f29.PNG)
 
    
-메소드
+## 메소드
 Get country
 - 국가목록 요청
 
