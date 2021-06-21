@@ -9,10 +9,16 @@ app.use(bodyParser.json());
 app.listen(3000);
 
 app.get('/country', getCountries);
-app.get('/country/:country_code', getCountry);
+app.get('/country/:alpha2_code', getCountry);
 app.post('/country', postCountry);
 app.put('/country', putCountry);
 app.delete('/country', deleteCountry);
+
+app.get('/subdivision', getSubdivisions);
+app.post('/subdivision', postSubdivision);
+app.put('/subdivision', putSubdivision);
+app.delete('/subdivision', deleteSubdivision);
+
 
 async function getCountries(req, res){
     try {
@@ -25,9 +31,9 @@ async function getCountries(req, res){
 
 async function getCountry(req, res) {
     try {
-        console.log('country_code: ', req.params.country_code);
-        let countryCode = req.params.country_code;
-        const ret = await myModel.readCountry(countryCode);
+        console.log('alpha2_code: ', req.params.alpha2_code);
+        let alpha2Code = req.params.alpha2_code;
+        const ret = await myModel.readCountry(alpha2Code);
         res.send({msg: 'MyController - getCountry() success', data: ret});
     } catch (error) {
         console.error('MyController - getCountry() error / ',error);
@@ -77,5 +83,41 @@ async function deleteCountry(req, res) {
         res.send({msg: 'tdController - deleteCountry() success'});
     } catch (error) {
         console.error('tdController - deleteCountry() error / ',error);
+    }
+}
+
+async function getSubdivisions(req, res) {
+    try {
+
+        res.send({msg: 'tdController - getSubdivisions() success'});
+    } catch (error) {
+        console.error('tdController - getSubdivisions() error / ',error);
+    }
+}
+
+async function postSubdivision(req, res) {
+    try {
+
+        res.send({msg: 'tdController - postSubdivision() success'});
+    } catch (error) {
+        console.error('tdController - postSubdivision() error / ',error);
+    }
+}
+
+async function putSubdivision(req, res) {
+    try {
+
+        res.send({msg: 'tdController - putSubdivision() success'});
+    } catch (error) {
+        console.error('tdController - putSubdivision() error / ',error);
+    }
+}
+
+async function deleteSubdivision(req, res) {
+    try {
+
+        res.send({msg: 'tdController - deleteSubdivision() success'});
+    } catch (error) {
+        console.error('tdController - deleteSubdivision() error / ',error);
     }
 }
